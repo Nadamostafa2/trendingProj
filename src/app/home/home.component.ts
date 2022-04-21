@@ -8,21 +8,31 @@ import { TrendingService } from '../trending.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-trendingMovies:any[]=[];
-trendingTvs:any[]=[];
+  trendingMovies: any[] = [];
+  trendingTvs: any[] = [];
 
-  constructor(private trendingService:TrendingService) { }
+  constructor(private trendingService: TrendingService) { }
 
   ngOnInit(): void {
+    this.getTrendingItems();
   }
-   getTrendingItems(){
-   this.trendingService.getTrending("all").subscribe((response:any)=>{
-    this.trendingMovies=response.results.filter((item:any)=>{
-      return item.media_type== "movie";
-     
+  getTrendingItems() {
+    this.trendingService.getTrending("all").subscribe((response: any) => {
+      this.trendingTvs = response.results.filter((item: any) => {
+      
+         return item.media_type == "tv";
+         
 
-   })
-console.log(this.trendingMovies);
-  });
+      })
+      
+      this.trendingMovies = response.results.filter((item: any) => {
+        return item.media_type == "movie";
+        
+      })
+      
+      //console.log(this.trendingMovies)
+      
+    })
+    
   }
 }
