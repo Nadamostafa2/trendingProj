@@ -1,0 +1,14 @@
+@import url(../../styles.scss);
+$lightBgColor:#1f2536;
+$fontColor:#fff;
+.navbar{
+
+    background: $lightBgColor;
+}
+.navbar-item{
+    
+    color: $fontColor;
+}
+i{
+margin: 10px;
+}
