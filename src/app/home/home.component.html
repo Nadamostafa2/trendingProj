@@ -16,7 +16,9 @@
     <div class="col-md-2 " *ngFor="let movie of trendingMovies">
         <div>
         <img class="w-100" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
-    <h4>{{movie.title}}</h4>    
+    <h4>{{movie.title}}</h4> 
+    <!-- <a routerLink="/details/{{movie..media_type}}/{{movie.id}}" class="btn btn-info">details</a> -->
+
     </div>
     </div>
 </div>
