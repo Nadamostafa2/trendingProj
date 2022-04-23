@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { PeopleComponent } from './people/people.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import{HttpClientModule} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import{HttpClientModule} from '@angular/common/http'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

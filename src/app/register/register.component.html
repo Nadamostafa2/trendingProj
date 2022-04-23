@@ -1,1 +1,54 @@
-<p>register works!</p>
+<br>
+<h1 class="mt-5">Registeration Form</h1>
+<div class="container">
+    <form (ngSubmit)="register()"  [formGroup]="registerForm">
+
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-1-12 col-form-label">firstName :</label>
+            <div class="col-sm-1-12">
+                <input formControlName="first_name" type="text" class="form-control"  id="inputName" >
+                <span *ngIf="registerForm.controls['first_name'].invalid && registerForm.controls['first_name'].touched" class="text-danger">name requried</span>
+            </div>
+        </div>
+       
+        <div class="form-group row">
+            <label for="lastName" class="col-sm-1-12 col-form-label">lastName :</label>
+            <div class="col-sm-1-12">
+                <input formControlName="last_name" type="text" class="form-control" name="lastName" id="lastName" >
+                <span *ngIf="registerForm.controls['last_name'].invalid && registerForm.controls['last_name'].touched" class="text-danger">Not valid min length must be 3</span>
+                
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="age" class="col-sm-1-12 col-form-label">Age :</label>
+            <div class="col-sm-1-12">
+                <input formControlName="age" type="number" class="form-control" name="age" id="age" >
+                <span *ngIf="registerForm.controls['age'].invalid && registerForm.controls['age'].touched" class="text-danger">Not valid age must be +18</span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-sm-1-12 col-form-label">email :</label>
+            <div class="col-sm-1-12">
+                <input formControlName="email" type="email" class="form-control" name="email" id="email" >
+                <span *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">Not valid email </span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-sm-1-12 col-form-label">password :</label>
+            <div class="col-sm-1-12">
+                <input formControlName="password" type="password" class="form-control" name="password" id="password" >
+                <span *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger">Not valid password</span>
+            </div>
+        </div>
+
+        <div class="form-group  row float-end">
+            <div class="mt-5">
+                <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary m-auto ">Register</button>
+            </div>
+        </div>
+
+    </form>
+</div>
