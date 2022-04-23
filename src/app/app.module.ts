@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import{HttpClientModule} from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
+import { OverviewPipe } from './overview.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { DetailsComponent } from './details/details.component';
     RegisterComponent,
     PeopleComponent,
     NotFoundComponent,
-    DetailsComponent
+    DetailsComponent,
+    OverviewPipe
   ],
   imports: [
     BrowserModule,
