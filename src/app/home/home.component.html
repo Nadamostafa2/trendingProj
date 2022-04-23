@@ -17,7 +17,7 @@
         <div>
         <img class="w-100" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
     <h4>{{movie.title}}</h4> 
-    <!-- <a routerLink="/details/{{movie..media_type}}/{{movie.id}}" class="btn btn-info">details</a> -->
+    <a routerLink="/details/{{movie.media_type}}/{{movie.id}}" class="btn btn-info">details</a>
 
     </div>
     </div>
@@ -42,7 +42,9 @@
     <div class="col-md-2 " *ngFor="let tv of trendingTvs ">
         <div>
         <img class="w-100" src="https://image.tmdb.org/t/p/original/{{tv.poster_path}}">
-    <h4>{{tv.name}}</h4>    
+    <h4>{{tv.name}}</h4>
+    <a routerLink="/details/{{tv.media_type}}/{{tv.id}}" class="btn btn-info">details</a>
+
     </div>
     </div>
 </div>
