@@ -1,1 +1,24 @@
-<p>people works!</p>
+ <div class="row">
+    <div class="col-md-4">
+        <br>
+        <br>
+
+        <div class="brdr w-25 mt-5"></div>
+        <div>
+            <h1>Trending</h1>
+            <h1>persons</h1>
+            <h1>towatch Now</h1>
+            
+        </div>
+
+        <div class="brdr w-100 mt-3 "></div>
+    </div>
+    <div class="col-md-2 " *ngFor="let person of trendingPersons">
+        <div  class="mt-2">
+            <img  class="w-100" src="https://image.tmdb.org/t/p/original/{{person.profile_path}}">
+             <h4>{{person.name}}</h4>
+           
+        </div>
+    </div>
+</div> 
+
