@@ -10,7 +10,7 @@ import { TrendingService } from '../trending.service';
 export class HomeComponent implements OnInit {
   trendingMovies: any[] = [];
   trendingTvs: any[] = [];
-term:any;
+term:any="";
   constructor(private trendingService: TrendingService) { }
 
   ngOnInit(): void {
