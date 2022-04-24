@@ -1,1 +1,25 @@
-<p>movies works!</p>
+<div class="row">
+    <div class="col-md-4">
+        <br>
+        <br>
+
+        <div class="brdr w-25 mt-5"></div>
+        <div>
+            <h1>Trending</h1>
+            <h1>Movies</h1>
+            <h1>towatch Now</h1>
+            <h5 class="mt-4 secondcolor">most watched movies by days</h5>
+        </div>
+
+        <div class="brdr w-100 mt-3 "></div>
+    </div>
+    <div class="col-md-2 " *ngFor="let movie of trendingMovies">
+        <div class="mt-2">
+            <img class="w-100" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
+            <h4>{{movie.title}}</h4>
+            <h5 class="secondcolor">{{movie.overview|overview:30}}</h5>
+            <a routerLink="/details/{{movie.media_type}}/{{movie.id}}" class="btn btn-info">more details</a>
+
+        </div>
+    </div>
+</div>

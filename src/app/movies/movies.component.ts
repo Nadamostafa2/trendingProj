@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrendingService } from '../trending.service';
 
 @Component({
   selector: 'app-movies',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent implements OnInit {
-
-  constructor() { }
+  trendingMovies: any[] = [];
+  constructor(private trendingService:TrendingService) { }
 
   ngOnInit(): void {
+    this.getTrendingMovies();
+  }
+  getTrendingMovies() {
+    this.trendingService.getTrending("movie").subscribe((response: any) => {
+      this.trendingMovies = response.results;
+    })
   }
 
 }
