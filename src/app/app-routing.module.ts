@@ -14,7 +14,7 @@ import { RegisterComponent } from './register/register.component';
 import { TvShowsComponent } from './tv-shows/tv-shows.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'',component:HomeComponent,canActivate:[AuthGuardService]},
 
   {path:'home',component:HomeComponent,canActivate:[AuthGuardService]},
   {path:'about',component:AboutComponent},
