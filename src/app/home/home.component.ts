@@ -10,7 +10,7 @@ import { TrendingService } from '../trending.service';
 export class HomeComponent implements OnInit {
   trendingMovies: any[] = [];
   trendingTvs: any[] = [];
-
+term:any;
   constructor(private trendingService: TrendingService) { }
 
   ngOnInit(): void {
@@ -21,8 +21,6 @@ export class HomeComponent implements OnInit {
       this.trendingTvs = response.results.filter((item: any) => {
       
          return item.media_type == "tv";
-         
-
       })
       
       this.trendingMovies = response.results.filter((item: any) => {

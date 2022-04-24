@@ -13,9 +13,10 @@ import { RegisterComponent } from './register/register.component';
 import { PeopleComponent } from './people/people.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import{HttpClientModule} from '@angular/common/http'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsComponent } from './details/details.component';
 import { OverviewPipe } from './overview.pipe';
+import { SearchPipe } from './search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,13 +30,15 @@ import { OverviewPipe } from './overview.pipe';
     PeopleComponent,
     NotFoundComponent,
     DetailsComponent,
-    OverviewPipe
+    OverviewPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

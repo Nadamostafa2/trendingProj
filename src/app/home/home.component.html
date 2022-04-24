@@ -1,4 +1,7 @@
 <div class="row">
+    <input [(ngModel)]="term" type="text" placeholder="search" class="mt-3 form-control w-50 m-auto ">
+</div>
+<div class="row">
     <div class="col-md-4">
         <br>
         <br>
@@ -13,7 +16,7 @@
 
         <div class="brdr w-100 mt-3 "></div>
     </div>
-    <div class="col-md-2 " *ngFor="let movie of trendingMovies">
+    <div class="col-md-2 " *ngFor="let movie of trendingMovies|search:term">
         <div class="mt-2">
             <img class="w-100" src="https://image.tmdb.org/t/p/original/{{movie.poster_path}}">
             <h4>{{movie.title}}</h4>
@@ -40,7 +43,7 @@
 
         <div class="brdr w-100 mt-3 "></div>
     </div>
-    <div class="col-md-2 " *ngFor="let tv of trendingTvs ">
+    <div class="col-md-2 " *ngFor="let tv of trendingTvs|search:term">
         <div>
             <img class="w-100" src="https://image.tmdb.org/t/p/original/{{tv.poster_path}}">
             <h4>{{tv.name}}</h4>
